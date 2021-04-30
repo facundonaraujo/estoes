@@ -35,10 +35,10 @@ La aplicación fue realizada en angular 11 para el frontend. Para el backend se 
 
 - Usuarios:GET [https://desafioestoesbackend.herokuapp.com/api/usuarios](https://desafioestoesbackend.herokuapp.com/api/usuarios)
 - Projects:POST [https://desafioestoesbackend.herokuapp.com/api/projects](https://desafioestoesbackend.herokuapp.com/api/projects)
-- Project:PUT [https://desafioestoesbackend.herokuapp.com/api/project](https://desafioestoesbackend.herokuapp.com/api/project)[idproject]
-- Project:DELETE [https://desafioestoesbackend.herokuapp.com/api/project](https://desafioestoesbackend.herokuapp.com/api/project)[idproject]
-- Project:POST [https://desafioestoesbackend.herokuapp.com/api/project](https://desafioestoesbackend.herokuapp.com/api/project)[idproject]
-- Project:GET [https://desafioestoesbackend.herokuapp.com/api/project](https://desafioestoesbackend.herokuapp.com/api/project)[idproject]
+- Project:PUT [https://desafioestoesbackend.herokuapp.com/api/project/](https://desafioestoesbackend.herokuapp.com/api/project/)`idproject`
+- Project:DELETE [https://desafioestoesbackend.herokuapp.com/api/project/](https://desafioestoesbackend.herokuapp.com/api/projec/t)`idproject`
+- Project:POST [https://desafioestoesbackend.herokuapp.com/api/project/](https://desafioestoesbackend.herokuapp.com/api/project/)`idproject`
+- Project:GET [https://desafioestoesbackend.herokuapp.com/api/project/](https://desafioestoesbackend.herokuapp.com/api/project/)`idproject`
 
 ## Links
 
