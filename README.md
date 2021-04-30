@@ -52,4 +52,4 @@ Run `npm start`for a dev server. Navigate to [http://localhost:4200/](http://loc
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI](https://angular.io/cli) Overview and Command Reference page.
