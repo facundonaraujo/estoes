@@ -1,0 +1,50 @@
+<div>
+  <div *ngIf="projects.length > 0">
+    <div *ngFor="let project of projects | paginate: {itemsPerPage: 10, currentPage: pagenumber, totalItems: totalProjects}"  class="divide-gray-300">
+      <div class="flex justify-between pt-4 pb-1">
+        <div>
+          <div class="flex flex-col">
+            <span class="text-xl">{{project.nombre}}</span>
+            <span class="text-sm text-gray-500">Creation date: {{ project.created | DateTransform}}</span>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="flex flex-row-reverse dropdown-btn">
+            <i class="fal fa-ellipsis-v text-5xl text-gray-700 cursor-pointer"></i>
+          </div>
+          <div class="dropdown-content">
+            <div class="cursor-pointer py-4 pl-3" (click)="editProject(project._id)">
+              <i class="fas fa-edit  text-lg px-1 leading-none align-middle"></i>
+              <span class="text-base pl-2 leading-none align-middle">Edit</span>
+            </div>
+            <div class="cursor-pointer py-4 pl-3" (click)="deleteProject(project._id)">
+              <i class="far fa-trash  text-lg px-1 leading-none align-middle"></i>
+              <span class="text-base pl-2 leading-none align-middle">Delete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-row pb-2">
+        <div >
+          <img class="rounded-full h-7 w-7 flex items-center justify-center bg-gray-400 text-sm" [src]="(project.assignedTo.avatar !== null && project.assignedTo.avatar !== undefined && project.assignedTo.avatar !== '') ? project.assignedTo.avatar : '../../../../assets/images/no-photo.jpg'" alt="">
+        </div>
+        <div class="pl-2 text-base">{{project.assignedTo.nombre}}</div>
+      </div>
+      <hr>
+    </div>
+    <!-- <pagination-controls (pageChange)="pageChange($event)"></pagination-controls> -->
+    <div class="flex flex-row-reverse">
+      <pagination-controls (pageChange)="pageChanged($event)"
+                            previousLabel=""
+                            nextLabel="">
+      </pagination-controls>
+    </div>
+  </div>
+  <div *ngIf="projects.length === 0">
+    <div class="flex flex-col text-center nodata">
+      <i class="fas fa-exclamation-circle text-6xl text-gray-700 cursor-pointer"></i>
+      <span class="text-2xl py-8 text-gray-500">No project has been created yet</span>
+    </div>
+  </div>
+
+</div>

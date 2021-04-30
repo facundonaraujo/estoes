@@ -1,0 +1,62 @@
+<div class="container mx-auto pt-4 px-4">
+
+  <div class="flex flex-row  py-4">
+    <div class="cursor-pointer" [routerLink]="'/projects/'">
+      <i class="fal fa-arrow-left  text-lg px-1 leading-none align-middle"></i>
+      <span class="text-base pl-2 leading-none align-middle">Back</span>
+    </div>
+    <span class="text-2xl font-bold pl-2 leading-none align-middle">{{(this.project._id !== null && this.project._id !== undefined && this.project._id !== '') ? 'Edit project' : 'Add project'}}</span>
+  </div>
+
+  <form  (ngSubmit)="createProject()" name="form" [formGroup]="form">
+    <div class="flex flex-col py-2">
+      <label for="nombre" class="pb-1">Project name</label>
+      <input type="text" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-grey-darker" formControlName="nombre" required>
+      <span class="text-red-400 pt-1" *ngIf="form.get('nombre').hasError('required')">This field is required</span>
+    </div>
+  
+    <div class="flex flex-col py-2">
+      <label for="descripcion" class="pb-1">Description</label>
+      <input type="text" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700" formControlName="descripcion" required>
+      <span class="text-red-400 pt-1" *ngIf="form.get('descripcion').hasError('required')">This field is required</span>
+    </div>
+  
+    <div class="flex flex-col py-2">
+      <label for="projectManager" class="pb-1">Project manager</label>
+      <select name="select" class="shadow border border-gray-300 rounded w-full py-2 px-3 text-gray-700 " formControlName="projectManager" required>
+        <option value="" selected>Select a person</option>
+        <option *ngFor="let user of users" [value]="user._id" >
+          {{user.nombre}}
+        </option>
+      </select>
+      <span class="text-red-400 pt-1" *ngIf="form.get('projectManager').hasError('required')">This field is required</span>
+    </div>
+  
+    <div class="flex flex-col py-3">
+      <label for="assignedTo" class="pb-1">Assigned to</label>
+      <select name="select" class="shadow border border-gray-300 rounded w-full py-2 px-3 text-gray-700" formControlName="assignedTo" required>
+        <option value="" selected>Select a person</option>
+        <option *ngFor="let user of users" [value]="user._id" >
+          {{user.nombre}}
+        </option>
+      </select>
+      <span class="text-red-400 pt-1" *ngIf="form.get('assignedTo').hasError('required')">This field is required</span>
+    </div>
+  
+    <div class="flex flex-col py-3">
+      <label for="status" class="pb-1">Status</label>
+      <select name="select" class="shadow border border-gray-300 rounded w-full py-2 px-3 text-gray-700" formControlName="status" required>
+        <option value="true" selected>Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+      <span class="text-red-400 pt-1" *ngIf="form.get('status').hasError('required')">This field is required</span>
+    </div>
+  
+    <button class="text-base bg-red-500 rounded-md text-white	p-2 px-4 hover:bg-red-700 focus:outline-none mt-4" [disabled]="form.invalid">
+      {{(this.project._id !== null && this.project._id !== undefined && this.project._id !== '') ?'Save changes'  :'Create project' }}
+    </button>
+  </form>
+
+
+</div>
+
