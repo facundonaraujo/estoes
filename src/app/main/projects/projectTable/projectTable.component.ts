@@ -1,9 +1,11 @@
 import { Project } from './../model/project.model';
 import { ProjectsService } from './../projects.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Swal from 'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'projectTable',
@@ -11,24 +13,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./projectTable.component.scss']
 })
 export class ProjectTableComponent implements OnInit {
+  form: FormGroup;
+  @ViewChild('filter', { static: true }) searchInput: ElementRef;
   pagenumber: number = 1;
   totalProjects: number = 0;
   projects: Project[] = [];
+  busqueda: string = '';
 
   constructor(
     public projectsService: ProjectsService,
     public toasterService: ToastrService,
     public router: Router,
-  ) { 
+    private _formBuilder: FormBuilder,
+  ) { }
+
+  ngOnInit() {
+    this.form = this._formBuilder.group({
+      search: [''],
+    });
+
+    fromEvent(this.searchInput.nativeElement, 'keyup')
+    .subscribe(() => {
+        var valores = this.form.getRawValue();
+        this.busqueda = valores.search;
+        this.getProyects();
+    });
+
     this.getProyects();
   }
 
-  ngOnInit() {
-  }
-
   getProyects(){
+    var valores = this.form.getRawValue();
     var data = {
-      pageNumber: this.pagenumber - 1
+      pageNumber: this.pagenumber - 1,
+      busqueda: valores.search
     }
     this.projectsService.getProjects(data)
     .subscribe((resp: any) => {

@@ -1,5 +1,14 @@
+<div class="flex justify-center py-3">
+  <div class="relative text-gray-600 w-full">
+    <form name="form" [formGroup]="form" >
+      <input #filter name="serch" placeholder="Search Project..." class="border border-gray-300 w-full bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" formControlName="search">
+    </form>
+    <i class="fas fa-search absolute right-0 top-0 mt-3 mr-4"></i>
+  </div>
+</div>
+
 <div>
-  <div *ngIf="projects.length > 0">
+  <div *ngIf="projects.length > 0 ">
     <div *ngFor="let project of projects | paginate: {itemsPerPage: 10, currentPage: pagenumber, totalItems: totalProjects}"  class="divide-gray-300">
       <div class="flex justify-between pt-4 pb-1">
         <div>
@@ -41,9 +50,17 @@
     </div>
   </div>
   <div *ngIf="projects.length === 0">
-    <div class="flex flex-col text-center nodata">
-      <i class="fas fa-exclamation-circle text-6xl text-gray-700 cursor-pointer"></i>
-      <span class="text-2xl py-8 text-gray-500">No project has been created yet</span>
+    <div *ngIf="this.busqueda !== null && this.busqueda !== undefined && this.busqueda !== ''">
+      <div class="flex flex-col text-center nodata">
+        <i class="fas fa-exclamation-circle text-6xl text-gray-700 cursor-pointer"></i>
+        <span class="text-2xl py-8 text-gray-500">Search not found</span>
+      </div>
+    </div>
+    <div *ngIf="!(this.busqueda !== null && this.busqueda !== undefined && this.busqueda !== '')">
+      <div class="flex flex-col text-center nodata">
+        <i class="fas fa-exclamation-circle text-6xl text-gray-700 cursor-pointer"></i>
+        <span class="text-2xl py-8 text-gray-500">No project has been created yet</span>
+      </div>
     </div>
   </div>
 
