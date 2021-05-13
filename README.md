@@ -54,11 +54,11 @@ Realizar Búsqueda del proyecto
 - **FRONTEND:**  [https://desafioestoes.web.app/projects](https://desafioestoes.web.app/projects)
 - **BACKEND:**  [https://desafioestoesbackend.herokuapp.com/api](https://desafioestoesbackend.herokuapp.com/api/projects)
 
-## Running
+## Run app
 
-Run `npm start`for a dev server. Navigate to [http://localhost:4200/](http://localhost:4200/). The app will automatically reload if you change any of the source files.
+Ejecute `npm start` para un servidor de desarrollo. Vaya a [http://localhost:4200/](http://localhost:4200/). La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
-## Build
+## Build app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI](https://angular.io/cli) Overview and Command Reference page.
+Ejecute `ng build` para construir el proyecto. Los archivos de construcción se almacenarán en el directorio `/dist`. Usa la marca `--prod` para una compilación de producción.
+
