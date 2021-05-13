@@ -10,22 +10,31 @@ El usuario accede a un administrador de proyectos para realizar la gestión, pue
 
 - El usuario no puede submitear la creación o edición de un proyecto si los campos no están validados.
 - El usuario debe poder utilizar el gestor en Desktop y Mobile.
-
-# Definiciones extras que no están en el diseño
-
-- El listado de proyectos puede tener un paginado
-- El eliminar puede tener un modal que sugiera si esta seguro de realizar la acción o no
-- El listado de proyectos puede tener un buscador de la lista por nombre de proyecto
-
-# **Definiciones técnicas**
-
-- Debe estar realizado en un framework de JS, Angular o React.
-- La aplicación debe estar publicada y debe ser accesible mediante un link(Ver Netlify, Heroku) o cualquier webserver.
-- El código de la aplicación debe estar subida a un repositorio de público acceso.
+- El listado de proyectos debe estar paginado
+- El eliminar proyecto debe tener un modal que sugiera si esta seguro de realizar la acción o no
+- El listado de proyectos debe tener un buscador de la lista por nombre de proyecto
 
 # **Descripción técnica**
 
-La aplicación fue realizada en angular 11 para el frontend. Para el backend se utilizo NodeJs y Express. El front fue subido a firebase y el back a heroku.
+La aplicación fue realizada en angular 11 y TaildwindCSS para el frontend. Para el backend se utilizo NodeJs y Express. El front fue subido a firebase y el back a heroku.
+
+# Preview App
+
+Lista de proyectos y menu de opciones
+
+![pantallas1-2](https://github.com/facundonaraujo/estoes/raw/master/src/assets/screens/pantallas1-2.jpg)
+
+Pantalla para crear y editar el proyecto
+
+![pantallas3-4](https://github.com/facundonaraujo/estoes/raw/master/src/assets/screens/pantallas3-4.jpg)
+
+Modal para confirmar la creación/eliminación del proyecto 
+
+![pantallas5-6](https://github.com/facundonaraujo/estoes/raw/master/src/assets/screens/pantallas5-6.jpg)
+
+Realizar Búsqueda del proyecto
+
+![pantallas7](https://github.com/facundonaraujo/estoes/raw/master/src/assets/screens/pantallas7.jpg)
 
 # Anexo
 
